@@ -1,0 +1,9 @@
+AWS_REGION="eu-central-1"
+PRIVATE_IP_CIDR="192.168.1.147/32"
+S3_BUCKET_NAME="d4ml-bucket/Ignes"
+AMI_ID="ami-d4ml-2022-10-05T10-47-38Z"
+KEY_PAIR_NAME="ignekp"
+IAM_INSTANCE_PROFILE="role-d4ml-cloud9-deployment"
+SECURITY_GROUP="sg-095ce500da640e0a9"
+INSTANCE_TYPE="t2.micro"
+INSTANCE_NAME="AWS_Igne_test" #change it later
