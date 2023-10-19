@@ -33,7 +33,7 @@ mkdir ~/AWS_task
 cd AWS_task
 
 # Clone your Terraform project from GitHub
-git clone https://github.com/Ignejoneigne/AWS_task_D4ML.git
+git clone https://github.com/Ignejoneigne/AWS_Hands_On_Task_D4ML.git
 
 # Initialize Terraform in your project directory
 cd AWS_Hands_On_Task_D4ML
