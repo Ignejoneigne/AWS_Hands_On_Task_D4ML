@@ -36,7 +36,7 @@ cd AWS_task
 git clone https://github.com/Ignejoneigne/AWS_task_D4ML.git
 
 # Initialize Terraform in your project directory
-cd AWS_task_D4ML
+cd AWS_Hands_On_Task_D4ML
 terraform init
 
 # Plan your Terraform configuration and save the execution plan
