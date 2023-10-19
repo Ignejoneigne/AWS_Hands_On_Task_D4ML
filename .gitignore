@@ -1,0 +1,14 @@
+# Ignore large files
+*.exe
+*.zip
+*.tar.gz
+
+# Ignore directories
+node_modules/
+
+# Ignore files with sensitive information
+secrets.yml
+credentials.json
+
+# Ignore Terraform specific files and directories
+.terraform/
