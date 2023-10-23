@@ -19,8 +19,8 @@ sudo apt update
 sudo apt install -y unzip git
 
 # Download and install Terraform (latest version)
-sudo wget https://releases.hashicorp.com/terraform/1.6.2/terraform_1.6.2_linux_amd64.zip
-unzip terraform_1.6.2_linux_amd64.zip
+sudo wget https://releases.hashicorp.com/terraform/1.6.1/terraform_1.6.1_linux_amd64.zip
+unzip terraform_1.6.1_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 
 # Install the AWS CLI
