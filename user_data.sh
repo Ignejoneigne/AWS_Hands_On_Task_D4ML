@@ -54,11 +54,11 @@ aws ec2 run-instances --image-id "${AMI_ID}" --instance-type "${INSTANCE_TYPE}" 
 
 
 # Upload 500MB file to EC2 instance from S3 bucket and count the time it takes
-#start_time=$(date +%s)
-#aws s3 cp s3://d4ml-bucket/Ignes/500MB-CZIPtestfile.org.zip /home/ec2-user/500MB-CZIPtestfile.org.zip --region "${AWS_REGION}"
-#end_time=$(date +%s)
-#elapsed_time=$((end_time - start_time))
-#echo "Elapsed time for uploading 500MB file: $elapsed_time seconds"
+start_time=$(date +%s)
+aws s3 cp s3://d4ml-bucket/Ignes/500MB-CZIPtestfile.org.zip /home/ec2-user/500MB-CZIPtestfile.org.zip --region "${AWS_REGION}"
+end_time=$(date +%s)
+elapsed_time=$((end_time - start_time))
+echo "Elapsed time for uploading 500MB file: $elapsed_time seconds"
 
 
 # Create a new folder within the existing "d4ml-bucket"
@@ -74,7 +74,7 @@ aws s3 ls s3://"${S3_BUCKET_NAME}"/logs/ > /var/log/uploaded_files.txt
 aws s3 cp /var/log/uploaded_files.txt s3://"${S3_BUCKET_NAME}"/logs/uploaded_files.txt
 
 # Create a cron job to run the script every 60 seconds
-#(crontab -l ; echo "*/5 * * * * /var/snap/amazon-ssm-agent/6312/AWS_task_D4ML/backup_script.sh > /var/log/backup_script.log 2>&1") | crontab -
+(crontab -l ; echo "*/5 * * * * /var/snap/amazon-ssm-agent/6312/AWS_task_D4ML/backup_script.sh > /var/log/backup_script.log 2>&1") | crontab -
 
 # automate the uploading of the entire /var/log/ directory to the newly created folder in S3
 aws s3 sync /var/log/ s3://"${S3_BUCKET_NAME}"/logs/ --acl bucket-owner-full-control --region "${AWS_REGION}"
