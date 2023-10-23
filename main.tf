@@ -26,7 +26,7 @@ resource "aws_instance" "IgneJone_instance" {
   # Other instance configuration options can go here
 }
 
-resource "aws_s3_bucket" "IgneJone_bucket" {
+data "aws_s3_bucket" "IgneJone_bucket" {
   bucket = var.S3_BUCKET_NAME
 
   tags = {
