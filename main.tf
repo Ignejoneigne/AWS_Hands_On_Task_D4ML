@@ -16,6 +16,14 @@ resource "aws_instance" "IgneJone_instance" {
   instance_type = var.INSTANCE_TYPE
   iam_instance_profile = var.IAM_INSTANCE_PROFILE
   user_data = file("user_data.sh")
+
+  metadata_options {
+    http_tokens             = "required"
+    http_put_response_hop_limit = 3
+    http_endpoint           = "enabled"
+  }
+
+  # Other instance configuration options can go here
 }
 
 resource "aws_s3_bucket" "IgneJone_bucket" {
@@ -24,10 +32,4 @@ resource "aws_s3_bucket" "IgneJone_bucket" {
   tags = {
     Name = "IgneJone"
   }
-}
-
-metadata "http_tokens" {
-  http_tokens             = "required"
-  http_put_response_hop_limit = 3
-  http_endpoint           = "enabled"
 }
