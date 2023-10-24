@@ -11,6 +11,36 @@ provider "aws" {
   region = var.AWS_DEFAULT_REGION
 }
 
+resource "aws_security_group" "my_security_group" {
+  name_prefix = "my_security_group_"
+  description = "My security group"
+  vpc_id      = data.aws_vpc.default.id
+
+  # Allow inbound traffic on port 80 from anywhere
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Allow inbound traffic on port 443 from the user's IP address
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [var.user_ip_address]
+  }
+
+  # Allow outbound traffic to all destinations
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 resource "aws_instance" "IgneJone_instance" {
   ami           = var.AMI_ID
   instance_type = var.INSTANCE_TYPE
