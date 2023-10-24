@@ -29,7 +29,7 @@ resource "aws_security_group" "my_security_group" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.user_ip_address]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
