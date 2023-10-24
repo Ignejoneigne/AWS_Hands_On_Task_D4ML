@@ -7,3 +7,4 @@ IAM_INSTANCE_PROFILE="role-d4ml-cloud9-deployment"
 SECURITY_GROUP="sg-095ce500da640e0a9"
 INSTANCE_TYPE="t2.micro"
 INSTANCE_NAME="AWS_Igne_test" #change it later
+USER_IP_ADDRESS="5.20.132.172/32"
