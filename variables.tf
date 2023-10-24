@@ -42,3 +42,8 @@ variable "INSTANCE_NAME" {
   type    = string
   description = "The name of the EC2 instance."
 }
+
+variable "USER_IP_ADDRESS" {
+  description = "The IP address of the user"
+  type        = string
+}
