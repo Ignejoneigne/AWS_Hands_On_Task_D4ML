@@ -50,7 +50,7 @@ aws ec2 run-instances --image-id "${AMI_ID}" --instance-type "${INSTANCE_TYPE}" 
 
 # Upload 500MB file to EC2 instance from S3 bucket and count the time it takes
 start_time=$(date +%s)
-aws s3 cp s3://d4ml-bucket/Ignes/500MB-CZIPtestfile.org.zip /home/ec2-user/500MB-CZIPtestfile.org.zip --region "${AWS_REGION}"
+aws s3 cp s3://d4ml-bucket/ignes/500MB-CZIPtestfile.org.zip /home/ec2-user/500MB-CZIPtestfile.org.zip --region "${AWS_REGION}"
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
 echo "Elapsed time for uploading 500MB file: $elapsed_time seconds"
