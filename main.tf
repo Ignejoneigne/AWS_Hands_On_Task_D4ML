@@ -53,5 +53,4 @@ data "aws_s3_bucket" "IgneJone_bucket" {
 
   tags = {
     Name = "IgneJone"
-  }
 }
