@@ -21,7 +21,7 @@ resource "aws_security_group" "my_security_group" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.user_ip_address]
   }
 
   # Allow inbound traffic on port 443 from the user's IP address
@@ -30,14 +30,6 @@ resource "aws_security_group" "my_security_group" {
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = [var.user_ip_address]
-  }
-
-  # Allow outbound traffic to all destinations
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
