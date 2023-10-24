@@ -23,11 +23,6 @@ sudo wget https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_a
 unzip terraform_1.5.0_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 
-# Install the AWS CLI
-curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-
 # Create a directory for your Terraform project
 mkdir ~/AWS_task
 cd AWS_task
